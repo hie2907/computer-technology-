@@ -1,0 +1,161 @@
+.custom-body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    max-width: 1150px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.custom-sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.custom-sidebar-nav {
+    list-style: none;
+}
+
+.custom-sidebar-nav a {
+    display: block;
+    padding: 10px 0;
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.custom-main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+}
+
+.custom-section {
+    margin-bottom: 30px;
+}
+
+.custom-h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.custom-h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.custom-h2 i {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.custom-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.custom-info-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-info-table td:first-child {
+    font-weight: 500;
+    width: 200px;
+}
+
+.custom-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.custom-detail-table th,
+.custom-detail-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-detail-table th {
+    font-weight: 500;
+    background-color: #f8f9fa;
+}
+
+.custom-status-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.custom-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.custom-btn-pending {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.custom-btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.custom-btn-active {
+    background-color: #28a745;
+    color: white;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+.custom-btn-inactive {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+.custom-btn-download {
+    background-color: #1a73e8;
+    color: white;
+    padding: 8px 16px;
+}
+
+@media (max-width: 768px) {
+    .custom-body {
+        flex-direction: column;
+    }
+
+    .custom-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .custom-sidebar-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .custom-info-table td:first-child {
+        width: 150px;
+    }
+
+    .custom-detail-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .custom-status-buttons {
+        flex-direction: column;
+    }
+}
