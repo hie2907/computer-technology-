@@ -58,7 +58,7 @@
                                                     <img src="{{ asset( $product->images['mainImage']) }}" alt="{{ $product->productName }}" class="rounded" style="width: 100px">
                                                 </td>
                                                 <td>{{$product->stockQuantity}}</td>
-                                                <td>{{$product->price}}</td>
+                                                <td>{{ number_format($product->price, 0, ',', '.') }} đ</td>
                                                 <td>{{$product->dateAdded}}</td>
                                                 <td>
                                                     <div class="form-actio text-center">

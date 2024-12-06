@@ -26,7 +26,7 @@ class AdminProductController extends Controller
         $request->validate([
             'productName' => 'required|string|max:255',
             'description' => 'required|string',
-            'price' => 'required|string',
+            'price' => 'required|numeric',
             'stockQuantity' => 'required|integer',
             'mainImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'additionalImages.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',

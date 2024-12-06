@@ -101,12 +101,13 @@
                                                 <p class="product-category">{{ $laptop->category->categoryName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $laptop->productName }}</>
                                                 </h3>
-                                                <h4 class="product-price cart-product-price">{{ $laptop->price }} đ <del
+                                                <h4 class="product-price cart-product-price">
+                                                    {{ number_format($laptop->price, 0, ',', '.') }} đ <del
                                                         class="product-old-price">{{ $laptop->price }} đ</del></h4>
                                             </div>
                                             <div class="add-to-cart">
                                                 <button class="add-to-cart-btn add-to-cart-btn-product"><i
-                                                        class="fa fa-shopping-cart"></i> add to cart</button>
+                                                        class="fa fa-shopping-cart"></i> Thêm Giỏ Hàng</button>
                                             </div>
                                         </div>
                                         <!-- /product -->
@@ -135,12 +136,14 @@
                                                 <p class="product-category">{{ $camera->category->categoryName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $camera->productName }}</>
                                                 </h3>
-                                                <h4 class="product-price cart-product-price">{{ $camera->price }} đ <del
-                                                        class="product-old-price">{{ $camera->price }} đ</del></h4>
+                                                <h4 class="product-price cart-product-price">
+                                                    {{ number_format($camera->price, 0, ',', '.') }} đ <del
+                                                        class="product-old-price">{{ number_format($camera->price, 0, ',', '.') }}
+                                                        đ</del></h4>
                                             </div>
                                             <div class="add-to-cart">
                                                 <button class="add-to-cart-btn add-to-cart-btn-product"><i
-                                                        class="fa fa-shopping-cart"></i> add to cart</button>
+                                                        class="fa fa-shopping-cart"></i> Thêm Giỏ Hàng</button>
                                             </div>
                                         </div>
                                         <!-- /product -->
@@ -170,13 +173,15 @@
                                                 <h3 class="product-name cart-product-name">{{ $accessory->productName }}
                                                     </>
                                                 </h3>
-                                                <h4 class="product-price cart-product-price">{{ $accessory->price }} đ
-                                                    <del class="product-old-price">{{ $accessory->price }} đ</del>
+                                                <h4 class="product-price cart-product-price">
+                                                    {{ number_format($accessory->price, 0, ',', '.') }} đ
+                                                    <del class="product-old-price">{{ number_format($accessory->price, 0, ',', '.') }}
+                                                        đ</del>
                                                 </h4>
                                             </div>
                                             <div class="add-to-cart">
                                                 <button class="add-to-cart-btn add-to-cart-btn-product"><i
-                                                        class="fa fa-shopping-cart"></i> add to cart</button>
+                                                        class="fa fa-shopping-cart"></i> Thêm Giỏ Hàng</button>
                                             </div>
                                         </div>
                                         <!-- /product -->
@@ -254,10 +259,10 @@
                         <div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
                                 <li class="active">
-                                    <a data-toggle="tab" href="#tab1">Laptops</a>
+                                    <a data-toggle="tab" href="#tab12">Laptops</a>
                                 </li>
-                                <li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-                                <li><a data-toggle="tab" href="#tab3">Phụ kiện</a></li>
+                                <li><a data-toggle="tab" href="#tab22">Cameras</a></li>
+                                <li><a data-toggle="tab" href="#tab32">Phụ kiện</a></li>
                             </ul>
                         </div>
                     </div>
@@ -269,7 +274,7 @@
                     <div class="row">
                         <div class="products-tabs">
                             <!-- tab -->
-                            <div id="tab1" class="tab-pane active">
+                            <div id="tab12" class="tab-pane active">
                                 <div class="products-slick" data-nav="#slick-nav-1">
                                     @foreach ($laptops as $laptop)
                                         <!-- product -->
@@ -288,12 +293,14 @@
                                                 <p class="product-category">{{ $laptop->category->categoryName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $laptop->productName }}</>
                                                 </h3>
-                                                <h4 class="product-price cart-product-price">{{ $laptop->price }} đ <del
-                                                        class="product-old-price">{{ $laptop->price }} đ</del></h4>
+                                                <h4 class="product-price cart-product-price">
+                                                    {{ number_format($laptop->price, 0, ',', '.') }} đ <del
+                                                        class="product-old-price">{{ number_format($laptop->price, 0, ',', '.') }}
+                                                        đ</del></h4>
                                             </div>
                                             <div class="add-to-cart">
                                                 <button class="add-to-cart-btn add-to-cart-btn-product"><i
-                                                        class="fa fa-shopping-cart"></i> add to cart</button>
+                                                        class="fa fa-shopping-cart"></i> Thêm Giỏ Hàng</button>
                                             </div>
                                         </div>
                                         <!-- /product -->
@@ -303,7 +310,7 @@
                             </div>
                             <!-- /tab -->
                             <!-- tab -->
-                            <div id="tab2" class="tab-pane">
+                            <div id="tab22" class="tab-pane">
                                 <div class="products-slick" data-nav="#slick-nav-2">
                                     @foreach ($cameras as $camera)
                                         <!-- product -->
@@ -322,12 +329,14 @@
                                                 <p class="product-category">{{ $camera->category->categoryName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $camera->productName }}</>
                                                 </h3>
-                                                <h4 class="product-price cart-product-price">{{ $camera->price }} đ <del
-                                                        class="product-old-price">{{ $camera->price }} đ</del></h4>
+                                                <h4 class="product-price cart-product-price">
+                                                    {{ number_format($camera->price, 0, ',', '.') }} đ <del
+                                                        class="product-old-price">
+                                                        {{ number_format($camera->price, 0, ',', '.') }} đ</del></h4>
                                             </div>
                                             <div class="add-to-cart">
                                                 <button class="add-to-cart-btn add-to-cart-btn-product"><i
-                                                        class="fa fa-shopping-cart"></i> add to cart</button>
+                                                        class="fa fa-shopping-cart"></i> Thêm Giỏ Hàng</button>
                                             </div>
                                         </div>
                                         <!-- /product -->
@@ -337,7 +346,7 @@
                             </div>
                             <!-- /tab -->
                             <!-- tab -->
-                            <div id="tab3" class="tab-pane">
+                            <div id="tab32" class="tab-pane">
                                 <div class="products-slick" data-nav="#slick-nav-3">
                                     @foreach ($accessories as $accessory)
                                         <!-- product -->
@@ -357,13 +366,15 @@
                                                 <h3 class="product-name cart-product-name">{{ $accessory->productName }}
                                                     </>
                                                 </h3>
-                                                <h4 class="product-price cart-product-price">{{ $accessory->price }} đ
-                                                    <del class="product-old-price">{{ $accessory->price }} đ</del>
+                                                <h4 class="product-price cart-product-price">
+                                                    {{ number_format($accessory->price, 0, ',', '.') }} đ
+                                                    <del class="product-old-price">{{ number_format($accessory->price, 0, ',', '.') }}
+                                                        đ</del>
                                                 </h4>
                                             </div>
                                             <div class="add-to-cart">
                                                 <button class="add-to-cart-btn add-to-cart-btn-product"><i
-                                                        class="fa fa-shopping-cart"></i> add to cart</button>
+                                                        class="fa fa-shopping-cart"></i> Thêm Giỏ Hàng</button>
                                             </div>
                                         </div>
                                         <!-- /product -->
@@ -413,7 +424,8 @@
                                             {{ $laptop->productName }}
                                         </h3>
                                         <h4 class="product-price">
-                                            {{ $laptop->price }} <del class="product-old-price">$990.00</del>
+                                            {{ number_format($laptop->price, 0, ',', '.') }} đ <del
+                                                class="product-old-price">$990.00</del>
                                         </h4>
                                     </div>
                                 </div>
@@ -436,7 +448,8 @@
                                             {{ $laptop->productName }}
                                         </h3>
                                         <h4 class="product-price">
-                                            {{ $laptop->price }} <del class="product-old-price">$990.00</del>
+                                            {{ number_format($laptop->price, 0, ',', '.') }} đ <del
+                                                class="product-old-price">$990.00</del>
                                         </h4>
                                     </div>
                                 </div>
@@ -470,7 +483,8 @@
                                             {{ $camera->productName }}
                                         </h3>
                                         <h4 class="product-price">
-                                            {{ $camera->price }} <del class="product-old-price">$990.00</del>
+                                            {{ number_format($camera->price, 0, ',', '.') }} đ <del
+                                                class="product-old-price">$990.00</del>
                                         </h4>
                                     </div>
                                 </div>
@@ -493,7 +507,8 @@
                                             {{ $camera->productName }}
                                         </h3>
                                         <h4 class="product-price">
-                                            {{ $camera->price }} <del class="product-old-price">$990.00</del>
+                                            {{ number_format($camera->price, 0, ',', '.') }} đ <del
+                                                class="product-old-price">$990.00</del>
                                         </h4>
                                     </div>
                                 </div>
@@ -529,7 +544,8 @@
                                             {{ $accessory->productName }}
                                         </h3>
                                         <h4 class="product-price">
-                                            {{ $accessory->price }} <del class="product-old-price">$990.00</del>
+                                            {{ number_format($accessory->price, 0, ',', '.') }} đ <del
+                                                class="product-old-price">$990.00</del>
                                         </h4>
                                     </div>
                                 </div>
@@ -552,7 +568,8 @@
                                             {{ $accessory->productName }}
                                         </h3>
                                         <h4 class="product-price">
-                                            {{ $accessory->price }} <del class="product-old-price">$990.00</del>
+                                            {{ number_format($accessory->price, 0, ',', '.') }} đ <del
+                                                class="product-old-price">$990.00</del>
                                         </h4>
                                     </div>
                                 </div>
