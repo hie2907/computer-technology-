@@ -9,11 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
         productElement.classList.add("order-col");
 
         const productHTML = `
-            <div>${product.quantity}x ${product.name}</div>
-            <div>${(
-                product.quantity * parseFloat(product.price)
-            ).toLocaleString()}đ</div>
-        `;
+<div>${product.quantity}x ${product.name}</div>
+<div>${(product.quantity * parseFloat(product.price)).toLocaleString()}đ
+</div>`;
 
         productElement.innerHTML = productHTML;
         orderProductsContainer.appendChild(productElement);
@@ -67,4 +65,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
         });
+
+    $(document).ready(function () {
+        $('input[name="paymentMethod"]').change(function () {
+            if ($(this).val() === "zalopay") {
+                $.ajax({
+                    url: "/cart/bank-payment",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ paymentMethod: "zalopay" }),
+                    headers: {
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+                            "content"
+                        ),
+                    },
+                    success: function (data) {
+                        if (data.order_url) {
+                            window.location.href = data.order_url;
+                        } else {
+                            console.error("Payment failed", data);
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error:", error);
+                    },
+                });
+            } else if ($(this).val() === "paypal") {
+                // handle paypal
+            }
+        });
+    });
 });

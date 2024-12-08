@@ -147,6 +147,9 @@ Route::prefix('/')->group(function () {
     Route::get('/cart', function () {
         return view('users.pages.cart.carts');
     })->name('client.cart');
+    Route::get('/test',function(){
+        return view('users.pages.cart.test');
+    });
 
     /* Authencation */
     //login
@@ -164,6 +167,7 @@ Route::prefix('/')->group(function () {
         Route::post('/cart-item', [ClientCart::class, 'cart_item'])->name('client.cart-item-authen');
         //Payment
         Route::get('/cart/payment', [ClientPayment::class, 'index'])->name('client.cart-payment');
+        Route::post('/cart/bank-payment', [ClientPayment::class, 'bank_payment'])->name('client.cart-bank-payment');
         Route::post('/cart/postpayment', [ClientPayment::class, 'post_payment'])->name('client.cart-post-payment');
         //Profile
         Route::get('/profile/order', [ClientProfile::class, 'profile_order'])->name('client.profile-order');

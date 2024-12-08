@@ -224,6 +224,40 @@
     font-size: 12px;
     margin-top: 8px;
 }
+.payment-option-custom {
+    display: flex;
+    align-items: center;
+}
+
+.payment-option-custom img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.dropdown-item-custom {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-item-custom:active {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.form-check-input-custom:checked + .form-check-label-custom {
+    font-weight: bold;
+}
+
+.dropdown-toggle-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-toggle-custom::after {
+    margin-left: auto;
+}
 
 input[type="checkbox"] {
     width: 16px;
