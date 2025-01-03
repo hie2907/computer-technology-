@@ -236,29 +236,6 @@ document
         }
     });
 
-// Cập nhật tổng số lượng sản phẩm trong giỏ hàng
-function updateCartQty() {
-    let products = JSON.parse(localStorage.getItem("products")) || [];
-    let totalQty = products.reduce(
-        (sum, product) => sum + parseInt(product.quantity),
-        0
-    );
-    document.querySelector(".cart-qty").textContent = totalQty;
-
-    let subtotal = products.reduce(
-        (sum, product) =>
-            sum +
-            product.quantity * parseFloat(product.price.replace(/,/g, "")),
-        0
-    );
-    document.querySelector(
-        ".cart-summary small"
-    ).textContent = `${products.length} Item(s) selected`;
-    document.querySelector(
-        ".cart-summary h5"
-    ).textContent = `SUBTOTAL: ${subtotal.toLocaleString()} đ`;
-}
-
 // Hiển thị các sản phẩm trong giỏ hàng
 function displayCartItems() {
     const cartList = document.querySelector(".cart-list");
@@ -304,18 +281,51 @@ function displayCartItems() {
     updateCartSummary(products);
     updateCartQty();
 }
+// Hàm định dạng số tiền
+function formatCurrency(number) {
+    return number.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+}
+
+// Cập nhật tổng số lượng sản phẩm trong giỏ hàng
+function updateCartQty() {
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+    let totalQty = products.reduce(
+        (sum, product) => sum + parseInt(product.quantity),
+        0
+    );
+    document.querySelector(".cart-qty").textContent = totalQty;
+
+    let subtotal = products.reduce(
+        (sum, product) =>
+            sum +
+            product.quantity * parseFloat(product.price.replace(/,/g, "")),
+        0
+    );
+    document.querySelector(
+        ".cart-summary small"
+    ).textContent = `${products.length} sản phẩm đã chọn`;
+    document.querySelector(
+        ".cart-summary h5"
+    ).textContent = `Tổng: ${formatCurrency(subtotal)}`;
+}
 
 // Cập nhật tổng tiền giỏ hàng
 function updateCartSummary(products) {
     let subtotal = 0;
     products.forEach((product) => {
-        subtotal +=
-            product.quantity * parseFloat(product.price.replace(/,/g, ""));
+        // Loại bỏ dấu phẩy trước khi chuyển đổi sang số
+        let price = parseFloat(
+            product.price.replace(/,/g, "").replace(/\./g, "")
+        );
+        subtotal += product.quantity * price;
     });
     document.querySelector(
         ".cart-summary small"
-    ).textContent = `${products.length} Item(s) selected`;
+    ).textContent = `${products.length} sản phẩm đã chọn`;
     document.querySelector(
         ".cart-summary h5"
-    ).textContent = `SUBTOTAL: ${subtotal.toLocaleString()} đ`;
+    ).textContent = `Tổng: ${formatCurrency(subtotal)}`;
 }
+
+// Cập nhật giao diện giỏ hàng và các hàm liên quan khác vẫn giữ nguyên như trước
+// Đảm bảo các hàm được gọi đúng thứ tự và đúng vị trí

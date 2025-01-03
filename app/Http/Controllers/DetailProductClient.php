@@ -37,9 +37,18 @@ class DetailProductClient extends Controller
                 $product->images = json_decode($product->images, true);
             }
         }
-        $categories= Category::all()->keyBy('categoryId');
-        foreach($recommendedProducts as $product){
-            $product->category1= $categories[$product->categoryId] ?? null;
+        // if (is_array($recommendedProducts) || is_object($recommendedProducts)) {
+        //     foreach ($recommendedProducts as $product) {
+        //         if (is_string($product->images)) {
+        //             $product->images = json_decode($product->images, true);
+        //         }
+        //     }
+        // } else {
+        //     $recommendedProducts = [];
+        // }
+        $categories = Category::all()->keyBy('categoryId');
+        foreach ($recommendedProducts as $product) {
+            $product->category1 = $categories[$product->categoryId] ?? null;
         }
         return $recommendedProducts;
     }

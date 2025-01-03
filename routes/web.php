@@ -137,6 +137,11 @@ Route::middleware('adminAuth')->group(function () {
 });
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeClient::class, 'index'])->name('client.home');
+    /* Search */
+    Route::get('/search', [CategoryClient::class, 'search'])->name('client.search');
+    Route::get('/camrera', [CategoryClient::class, 'product_camera'])->name('client.camera');
+    Route::get('/laptops', [CategoryClient::class, 'product_laptop'])->name('client.laptop');
+    Route::get('/accessory', [CategoryClient::class, 'product_accessory'])->name('client.accessory');
 
     /* Category */
     Route::get('/category', [CategoryClient::class, 'index'])->name('client.category');
@@ -172,5 +177,10 @@ Route::prefix('/')->group(function () {
         //Profile
         Route::get('/profile/order', [ClientProfile::class, 'profile_order'])->name('client.profile-order');
         Route::get('/profile/order-detail/{orderId}', [ClientProfile::class, 'profile_order_detail'])->name('client.profile-detail-order');
+        Route::get('/profile/info', [ClientProfile::class, 'profile_info'])->name('client.profile-info');
+        Route::get('/profile/info-edit', [ClientProfile::class, 'profile_info_edit'])->name('client.profile-info-edit');
+        Route::post('/profile/info-updateedit', [ClientProfile::class, 'profile_info_update_edit'])->name('client.profile-info-updateedit');
+        Route::get('/profile/change-pass', [ClientProfile::class, 'profile_change_pass'])->name('client.profile-change_pass');
+        Route::post('/profile/change-pass', [ClientProfile::class, 'profile_update_pass'])->name('client.profile-update_pass');
     });
 });

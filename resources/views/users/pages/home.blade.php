@@ -14,7 +14,7 @@
                         </div>
                         <div class="shop-body">
                             <h3>Laptop<br />Chính Hãng</h3>
-                            <a href="#" class="cta-btn">Truy cập ngay <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{route('client.category')}}" class="cta-btn">Truy cập ngay <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="shop-body">
                             <h3>Cameras<br />Chất Lượng</h3>
-                            <a href="#" class="cta-btn">Truy cập ngay <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{route('client.category')}}" class="cta-btn">Truy cập ngay <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="shop-body">
                             <h3>Phụ kiện<br />Đa dạng</h3>
-                            <a href="#" class="cta-btn">Truy cập ngay <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{route('client.category')}}" class="cta-btn">Truy cập ngay <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">{{ $laptop->category->categoryName }}</p>
+                                                <p class="product-category">{{ $laptop->brand->brandName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $laptop->productName }}</>
                                                 </h3>
                                                 <h4 class="product-price cart-product-price">
@@ -133,7 +133,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">{{ $camera->category->categoryName }}</p>
+                                                <p class="product-category">{{ $camera->brand->brandName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $camera->productName }}</>
                                                 </h3>
                                                 <h4 class="product-price cart-product-price">
@@ -169,7 +169,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">{{ $accessory->category->categoryName }}</p>
+                                                <p class="product-category">{{ $accessory->brand->brandName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $accessory->productName }}
                                                     </>
                                                 </h3>
@@ -212,31 +212,32 @@
                             <li>
                                 <div>
                                     <h3>02</h3>
-                                    <span>Days</span>
+                                    <span>Ngày</span>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>10</h3>
-                                    <span>Hours</span>
+                                    <span>Giờ</span>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>34</h3>
-                                    <span>Mins</span>
+                                    <span>Phút
+                                    </span>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>60</h3>
-                                    <span>Secs</span>
+                                    <span>Giây</span>
                                 </div>
                             </li>
                         </ul>
-                        <h2 class="text-uppercase">hot deal this week</h2>
-                        <p>New Collection Up to 50% OFF</p>
-                        <a class="primary-btn cta-btn" href="#">Shop now</a>
+                        <h2 class="text-uppercase">Ưu đãi trong tuần</h2>
+                        <p>Sản phẩm mới giảm 50%</p>
+                        <a class="primary-btn cta-btn" href="#">Truy cập ngay</a>
                     </div>
                 </div>
             </div>
@@ -290,7 +291,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">{{ $laptop->category->categoryName }}</p>
+                                                <p class="product-category">{{ $laptop->brand->brandName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $laptop->productName }}</>
                                                 </h3>
                                                 <h4 class="product-price cart-product-price">
@@ -326,7 +327,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">{{ $camera->category->categoryName }}</p>
+                                                <p class="product-category">{{ $camera->brand->brandName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $camera->productName }}</>
                                                 </h3>
                                                 <h4 class="product-price cart-product-price">
@@ -362,7 +363,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">{{ $accessory->category->categoryName }}</p>
+                                                <p class="product-category">{{ $accessory->brand->brandName }}</p>
                                                 <h3 class="product-name cart-product-name">{{ $accessory->productName }}
                                                     </>
                                                 </h3>
@@ -419,7 +420,7 @@
                                         <img src="{{ asset($laptop->images['mainImage']) }}" alt="" />
                                     </div>
                                     <div class="product-body">
-                                        <p class="product-category">{{ $laptop->category->categoryName }}</p>
+                                        <p class="product-category">{{ $laptop->brand->brandName }}</p>
                                         <h3 class="product-name">
                                             {{ $laptop->productName }}
                                         </h3>
@@ -443,7 +444,7 @@
                                         <img src="{{ asset($laptop->images['mainImage']) }}" alt="" />
                                     </div>
                                     <div class="product-body">
-                                        <p class="product-category">{{ $laptop->category->categoryName }}</p>
+                                        <p class="product-category">{{ $laptop->brand->brandName }}</p>
                                         <h3 class="product-name">
                                             {{ $laptop->productName }}
                                         </h3>
@@ -478,7 +479,7 @@
                                         <img src="{{ asset($camera->images['mainImage']) }}" alt="" />
                                     </div>
                                     <div class="product-body">
-                                        <p class="product-category">{{ $camera->category->categoryName }}</p>
+                                        <p class="product-category">{{ $camera->brand->brandName }}</p>
                                         <h3 class="product-name">
                                             {{ $camera->productName }}
                                         </h3>
@@ -502,7 +503,7 @@
                                         <img src="{{ asset($camera->images['mainImage']) }}" alt="" />
                                     </div>
                                     <div class="product-body">
-                                        <p class="product-category">{{ $camera->category->categoryName }}</p>
+                                        <p class="product-category">{{ $camera->brand->brandName }}</p>
                                         <h3 class="product-name">
                                             {{ $camera->productName }}
                                         </h3>
@@ -539,7 +540,7 @@
                                         <img src="{{ asset($accessory->images['mainImage']) }}" alt="" />
                                     </div>
                                     <div class="product-body">
-                                        <p class="product-category">{{ $accessory->category->categoryName }}</p>
+                                        <p class="product-category">{{ $accessory->brand->brandName }}</p>
                                         <h3 class="product-name">
                                             {{ $accessory->productName }}
                                         </h3>
@@ -563,7 +564,7 @@
                                         <img src="{{ asset($accessory->images['mainImage']) }}" alt="" />
                                     </div>
                                     <div class="product-body">
-                                        <p class="product-category">{{ $accessory->category->categoryName }}</p>
+                                        <p class="product-category">{{ $accessory->brand->brandName }}</p>
                                         <h3 class="product-name">
                                             {{ $accessory->productName }}
                                         </h3>
@@ -622,4 +623,11 @@
         <!-- /container -->
     </div>
     <!-- /NEWSLETTER -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+  intent="WELCOME"
+  chat-title="computer_dl"
+  agent-id="e46542ca-1941-47c4-8536-7220673af919"
+  language-code="en"
+></df-messenger>
 @endsection

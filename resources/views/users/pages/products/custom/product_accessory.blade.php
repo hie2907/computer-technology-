@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <ul class="breadcrumb-tree">
                         <li><a href="{{ route('client.home') }}">Trang Chủ</a></li>
-                        <li class="active">Danh Mục (227,490 Results)</li>
+                        <li class="active">Thiết Bị</li>
                     </ul>
                 </div>
             </div>
@@ -29,24 +29,22 @@
                 <div id="aside" class="col-md-3">
                     <!-- aside Widget -->
                     <div class="aside">
-                        <h3 class="aside-title">Danh Mục</h3>
+                        <h3 class="aside-title">Thương Hiệu</h3>
                         <div class="checkbox-filter">
-                            @foreach ($sidebarCategories as $sidebarCategory)
+                            @foreach ($sidebarBrands as $sidebarBrand)
                                 <div class="input-checkbox">
-                                    <input type="checkbox" class="category-checkbox"
-                                        id="category-{{ $sidebarCategory->categoryId }}"
-                                        value="{{ $sidebarCategory->categoryId }}">
-                                    <label for="category-{{ $sidebarCategory->categoryId }}">
+                                    <input type="checkbox" class="brand-checkbox" id="brand-{{ $sidebarBrand->brandId }}"
+                                        value="{{ $sidebarBrand->brandId }}">
+                                    <label for="brand-{{ $sidebarBrand->brandId }}">
                                         <span></span>
-                                        {{ $sidebarCategory->categoryName }}
-                                        <small>(120)</small>
+                                        {{ $sidebarBrand->brandName }}
+                                        <small>(578)</small>
                                     </label>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                     <!-- /aside Widget -->
-
                     <!-- aside Widget -->
                     <div class="aside">
                         <h3 class="aside-title">Giá</h3>
@@ -67,23 +65,7 @@
                     </div>
                     <!-- /aside Widget -->
 
-                    <!-- aside Widget -->
-                    <div class="aside">
-                        <h3 class="aside-title">Thương Hiệu</h3>
-                        <div class="checkbox-filter">
-                            @foreach ($sidebarBrands as $sidebarBrand)
-                                <div class="input-checkbox">
-                                    <input type="checkbox" class="brand-checkbox" id="brand-{{ $sidebarBrand->brandId }}" value="{{ $sidebarBrand->brandId }}">
-                                    <label for="brand-{{ $sidebarBrand->brandId }}">
-                                        <span></span>
-                                        {{ $sidebarBrand->brandName }}
-                                        <small>(578)</small>
-                                    </label>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <!-- /aside Widget -->
+
                 </div>
                 <!-- /ASIDE -->
 

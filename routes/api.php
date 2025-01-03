@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 Route::group(['prefix' => 'categories'], function () {
-    Route::get('popular', [CategoryClient::class, 'get_popular_products']);
-    // Route::get('recommended', [CategoryClient::class, 'get_recommended_products']);
-    // Route::get('test', [CategoryClient::class, 'test_get_recommended_products']);
+    Route::get('laptop', [CategoryClient::class, 'get_popular_products_laptop']);
+    Route::get('camera', [CategoryClient::class, 'get_popular_products_camera']);
+    Route::get('accessory', [CategoryClient::class, 'get_popular_products_accessory']);
 });

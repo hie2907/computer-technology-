@@ -45,13 +45,6 @@ class ClientAuthController extends Controller
 
         return redirect()->route('client.authen-login')->with('message', 'Registration successful. Please login.');
     }
-    // public function login(Request $request){
-    //     $credentials = $request->only('email', 'password');
-    //     if (Auth::guard('user')->attempt($credentials)) {
-    //     return redirect()->route('client.cart-payment');
-    // }
-    //     return redirect()->route('client.authen-login')->with('error', 'Invalid credentials');
-    // }
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');

@@ -14,6 +14,17 @@ $(document).ready(function () {
         $(".brand-checkbox:checked").each(function () {
             brand_ids.push(parseInt($(this).val()));
         });
+
+        console.log(
+            "Sending request:",
+            category_ids,
+            brand_ids,
+            price_min,
+            price_max,
+            sort_option,
+            display_count
+        ); // Log request data
+
         $.ajax({
             url: "/category/filter-product",
             method: "POST",
@@ -27,15 +38,18 @@ $(document).ready(function () {
                 display_count: display_count,
             },
             success: function (response) {
+                console.log("Received response:", response); // Log response data
                 $("#product-list").html(response.html);
                 attachProductEventHandlers();
             },
+
             error: function (xhr, status, error) {
                 console.log("AJAX error:", status, error);
                 console.log(xhr.responseText);
             },
         });
     };
+
     $(".category-checkbox, .brand-checkbox").change(function () {
         filterProducts();
     });

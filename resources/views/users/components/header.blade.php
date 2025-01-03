@@ -16,7 +16,7 @@
             <ul class="header-links pull-right">
                 <li>
                     @if (Auth::guard('user')->check())
-                        <a href="{{route('client.profile-order')}}"><i class="fa fa-user-o"></i> {{ Auth::guard('user')->user()->userName }}</a>
+                        <a href="{{route('client.profile-info')}}"><i class="fa fa-user-o"></i> {{ Auth::guard('user')->user()->userName }}</a>
                         <form id="logout-form" action="{{ route('client.authen-logout') }}" method="POST"
                             style="display: none;">
                             @csrf
@@ -43,7 +43,7 @@
                 <!-- LOGO -->
                 <div class="col-md-3">
                     <div class="header-logo">
-                        <a href="#" class="logo">
+                        <a href="{{route('client.home')}}" class="logo">
                             <img src="{{ asset('client/img/logo1.png') }}" style="width: 85px;height:80px" alt="" />
                         </a>
                     </div>
@@ -53,9 +53,9 @@
                 <!-- SEARCH BAR -->
                 <div class="col-md-6">
                     <div class="header-search">
-                        <form>
-                            <input class="input" placeholder="Tìm kiếm" />
-                            <button class="search-btn">Tìm kiếm</button>
+                        <form action="{{route('client.search')}}" method="GET">
+                            <input class="input" name=seach_query placeholder="Tìm kiếm" />
+                            <button class="search-btn" type="submit">Tìm kiếm</button>
                         </form>
                     </div>
                 </div>
