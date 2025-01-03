@@ -9,10 +9,8 @@
                 <div class="col-md-12">
                     <ul class="breadcrumb-tree">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">All Categories</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Headphones</a></li>
-                        <li class="active">Product name goes here</li>
+                        <li><a href="#">Danh mục</a></li>
+                        <li class="active">{{ $products->productName }}</li>
                     </ul>
                 </div>
             </div>
@@ -70,31 +68,17 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <a class="review-link" href="#">10 Review(s) | Add your review</a>
+                            <a class="review-link" href="#">10 Phản hồi | Thêm vào reviews</a>
                         </div>
                         <div>
                             <h3 class="product-price" id="product-price"> {{ $products->price }} đ<del
-                                    class="product-old-price">$990.00</del></h3>
-                            <span class="product-available">In Stock</span>
+                                    class="product-old-price">9.000.000 đ</del></h3>
+                            <span class="product-available">Còn Hàng</span>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                        <div class="product-options">
-                            <label>
-                                Size
-                                <select class="input-select">
-                                    <option value="0">X</option>
-                                </select>
-                            </label>
-                            <label>
-                                Màu
-                                <select class="input-select">
-                                    <option value="0">Red</option>
-                                </select>
-                            </label>
-                        </div>
+                        <p>
+                            ASUS ROG Strix là dòng laptop gaming cao cấp thuộc thương hiệu Republic of Gamers (ROG) của
+                            ASUS, được thiết kế dành riêng cho game thủ và những người yêu cầu hiệu suất cao.
+                        </p>
 
                         <div class="add-to-cart">
                             <div class="qty-label">
@@ -179,7 +163,8 @@
                                 </div>
                             </div>
                             <div class="product-body">
-                                <p class="product-category">{{ $recommendedProduct->category1->categoryName ?? 'null' }}</p>
+                                <p class="product-category">{{ $recommendedProduct->category1->categoryName ?? 'null' }}
+                                </p>
                                 <h3 class="product-name cart-product-name">{{ $recommendedProduct->productName }}</>
                                 </h3>
                                 <h4 class="product-price cart-product-price">{{ $recommendedProduct->price }} đ <del
